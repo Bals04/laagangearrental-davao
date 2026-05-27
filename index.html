@@ -120,9 +120,8 @@
 
     /* Reveal-on-scroll */
     .reveal {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
+      opacity: 1;
+      transform: none;
     }
 
     .reveal.is-in {
@@ -608,42 +607,42 @@
       <!-- One cover per category (links to the full gear page) -->
       <div class="mt-12 grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-3">
         <a href="gear.html#headlamps" class="reveal group relative block overflow-hidden rounded-3xl shadow-sm">
-          <img src="assets/gears/headlamps/IMG_4413.jpg" alt="Headlamps" loading="lazy" class="aspect-[4/5] h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+          <img src="assets/gears/headlamps/IMG_4413.jpg" alt="Headlamps" class="aspect-[4/5] h-full w-full object-cover transition duration-500 group-hover:scale-105" />
           <span class="absolute inset-0 bg-gradient-to-t from-brand-forest/90 via-brand-forest/15 to-transparent"></span>
           <span class="absolute inset-x-0 bottom-0 p-4 text-left">
             <span class="block font-display text-lg font-semibold uppercase tracking-wide text-brand-cream">Headlamps</span>
           </span>
         </a>
         <a href="gear.html#trekking-poles" class="reveal group relative block overflow-hidden rounded-3xl shadow-sm">
-          <img src="assets/gears/trekking-poles/IMG_4417.jpg" alt="Trekking poles" loading="lazy" class="aspect-[4/5] h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+          <img src="assets/gears/trekking-poles/IMG_4417.jpg" alt="Trekking poles" class="aspect-[4/5] h-full w-full object-cover transition duration-500 group-hover:scale-105" />
           <span class="absolute inset-0 bg-gradient-to-t from-brand-forest/90 via-brand-forest/15 to-transparent"></span>
           <span class="absolute inset-x-0 bottom-0 p-4 text-left">
             <span class="block font-display text-lg font-semibold uppercase tracking-wide text-brand-cream">Trekking Poles</span>
           </span>
         </a>
         <a href="gear.html#outdoor-bags" class="reveal group relative block overflow-hidden rounded-3xl shadow-sm">
-          <img src="assets/gears/outdoor-bags/IMG_5090.jpg" alt="Outdoor bags" loading="lazy" class="aspect-[4/5] h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+          <img src="assets/gears/outdoor-bags/IMG_5090.jpg" alt="Outdoor bags" class="aspect-[4/5] h-full w-full object-cover transition duration-500 group-hover:scale-105" />
           <span class="absolute inset-0 bg-gradient-to-t from-brand-forest/90 via-brand-forest/15 to-transparent"></span>
           <span class="absolute inset-x-0 bottom-0 p-4 text-left">
             <span class="block font-display text-lg font-semibold uppercase tracking-wide text-brand-cream">Outdoor Bags</span>
           </span>
         </a>
         <a href="gear.html#cook-set" class="reveal group relative block overflow-hidden rounded-3xl shadow-sm">
-          <img src="assets/gears/cook-set/IMG_4741.jpg" alt="Cook set" loading="lazy" class="aspect-[4/5] h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+          <img src="assets/gears/cook-set/IMG_4741.jpg" alt="Cook set" class="aspect-[4/5] h-full w-full object-cover transition duration-500 group-hover:scale-105" />
           <span class="absolute inset-0 bg-gradient-to-t from-brand-forest/90 via-brand-forest/15 to-transparent"></span>
           <span class="absolute inset-x-0 bottom-0 p-4 text-left">
             <span class="block font-display text-lg font-semibold uppercase tracking-wide text-brand-cream">Cook Set</span>
           </span>
         </a>
         <a href="gear.html#camping-lights" class="reveal group relative block overflow-hidden rounded-3xl shadow-sm">
-          <img src="assets/gears/camping-lights/Screenshot 2026-05-27 122247.png" alt="Camping lights" loading="lazy" class="aspect-[4/5] h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+          <img src="assets/gears/camping-lights/Screenshot 2026-05-27 122247.png" alt="Camping lights" class="aspect-[4/5] h-full w-full object-cover transition duration-500 group-hover:scale-105" />
           <span class="absolute inset-0 bg-gradient-to-t from-brand-forest/90 via-brand-forest/15 to-transparent"></span>
           <span class="absolute inset-x-0 bottom-0 p-4 text-left">
             <span class="block font-display text-lg font-semibold uppercase tracking-wide text-brand-cream">Camping Lights</span>
           </span>
         </a>
         <a href="gear.html#sets" class="reveal group relative block overflow-hidden rounded-3xl shadow-sm">
-          <img src="assets/gears/sets/Screenshot 2026-05-27 130139.png" alt="Gear sets" loading="lazy" class="aspect-[4/5] h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+          <img src="assets/gears/sets/Screenshot 2026-05-27 130139.png" alt="Gear sets" class="aspect-[4/5] h-full w-full object-cover transition duration-500 group-hover:scale-105" />
           <span class="absolute inset-0 bg-gradient-to-t from-brand-forest/90 via-brand-forest/15 to-transparent"></span>
           <span class="absolute inset-x-0 bottom-0 p-4 text-left">
             <span class="block font-display text-lg font-semibold uppercase tracking-wide text-brand-cream">Sets</span>
@@ -928,7 +927,7 @@
             io.unobserve(e.target);
           }
         });
-      }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+      }, { threshold: 0, rootMargin: '0px 0px 120px 0px' });
       document.querySelectorAll('.reveal').forEach(el => io.observe(el));
     } else {
       document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-in'));
