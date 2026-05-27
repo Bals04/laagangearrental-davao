@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Gear · Laagan Gear Rental · Davao</title>
+  <meta name="description"
+    content="Browse all outdoor and hiking gear for rent at Laagan Gear Rental, Davao — headlamps, trekking poles, outdoor bags and cook sets." />
+  <link rel="icon" href="assets/logo.PNG" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              forest: '#1E3D2B',
+              pine: '#2E5339',
+              moss: '#5C7A52',
+              cream: '#F6E7CB',
+              sand: '#EFD9B4',
+              sun: '#EC8B3C',
+              'sun-deep': '#CF7322',
+              ink: '#1A1A17',
+            }
+          },
+          fontFamily: {
+            display: ['Oswald', 'system-ui', 'sans-serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 110px;
+      max-width: 100%;
+      overflow-x: clip;
+    }
+
+    body {
+      background-color: #F6E7CB;
+      color: #1A1A17;
+      font-family: Inter, system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.12  0 0 0 0 0.24  0 0 0 0 0.17  0 0 0 0.05 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    }
+
+    .font-display {
+      letter-spacing: 0.01em;
+    }
+
+    html {
+      scrollbar-color: #2E5339 #EFD9B4;
+      scrollbar-width: thin;
+    }
+
+    ::-webkit-scrollbar {
+      width: 12px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #EFD9B4;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, #5C7A52, #2E5339, #1E3D2B);
+      border: 3px solid #EFD9B4;
+      border-radius: 999px;
+    }
+
+    .title-underline::after {
+      content: "";
+      display: block;
+      width: 64px;
+      height: 4px;
+      margin-top: 14px;
+      background: #EC8B3C;
+      border-radius: 999px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.is-in {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* Preloader */
+    body.is-loading {
+      overflow: hidden;
+    }
+
+    #preloader {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      background: #F6E7CB;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
+    }
+
+    body.loaded #preloader {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    #preloader .pl-logo {
+      height: 96px;
+      width: 96px;
+      border-radius: 9999px;
+      animation: plpulse 1.6s ease-in-out infinite;
+    }
+
+    #preloader .pl-scene {
+      width: 210px;
+      height: auto;
+      filter: drop-shadow(0 8px 16px rgba(30, 61, 43, 0.15));
+    }
+
+    #preloader .pl-sun {
+      transform-origin: center;
+      animation: plpulse 2.6s ease-in-out infinite;
+    }
+
+    #preloader .pl-text {
+      font-family: Oswald, system-ui, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      font-size: 0.8rem;
+      color: #2E5339;
+      animation: plblink 1.6s ease-in-out infinite;
+    }
+
+    @keyframes plblink {
+
+      0%,
+      100% {
+        opacity: 0.55;
+      }
+
+      50% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes plpulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.07);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+
+      #preloader .pl-logo,
+      #preloader .pl-sun,
+      #preloader .pl-text {
+        animation: none;
+      }
+    }
+  </style>
+</head>
+
+<body class="overflow-x-hidden is-loading">
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <img src="assets/logo.PNG" alt="Laagan Gear Rental" class="pl-logo" />
+    <!-- hiking scene: sun, mountains, and a hiker walking the trail -->
+    <svg class="pl-scene" viewBox="0 0 220 140" fill="none" xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true">
+      <circle class="pl-sun" cx="168" cy="46" r="15" fill="#EC8B3C" />
+      <path d="M0 140 L55 58 L92 102 L122 54 L168 110 L220 72 L220 140 Z" fill="#1E3D2B" />
+      <path d="M0 140 L40 96 L82 120 L122 92 L172 124 L220 102 L220 140 Z" fill="#2E5339" />
+      <path id="plTrail" d="M10 128 Q 70 112 112 120 T 212 102" fill="none" stroke="#F6E7CB" stroke-width="3"
+        stroke-linecap="round" stroke-dasharray="2 9" />
+      <circle r="5" fill="#EC8B3C" stroke="#1E3D2B" stroke-width="2">
+        <animateMotion dur="2.6s" repeatCount="indefinite" rotate="auto" calcMode="linear">
+          <mpath xlink:href="#plTrail" href="#plTrail" />
+        </animateMotion>
+      </circle>
+    </svg>
+    <p class="pl-text">Packing your gear…</p>
+  </div>
+
+  <!-- ============================ NAV ============================ -->
+  <header id="nav" class="fixed inset-x-0 top-0 z-50 transition-all duration-300">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
+      <div class="mt-3 flex items-center justify-between rounded-full border-2 border-brand-forest bg-brand-cream/90 px-4 py-2.5 shadow-lg backdrop-blur-md sm:px-6">
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="assets/logo.PNG" alt="Laagan Gear Rental logo" class="h-11 w-11 rounded-full object-contain" />
+          <span class="hidden font-display text-lg font-semibold uppercase tracking-wide text-brand-forest sm:block">
+            Laagan Gear Rental
+          </span>
+        </a>
+
+        <nav class="hidden items-center gap-7 font-sans text-sm font-medium text-brand-forest md:flex">
+          <a href="index.html" class="transition hover:text-brand-sun-deep">Home</a>
+          <a href="index.html#gear" class="transition hover:text-brand-sun-deep">Gear</a>
+          <a href="index.html#adventures" class="transition hover:text-brand-sun-deep">Adventures</a>
+          <a href="index.html#about" class="transition hover:text-brand-sun-deep">About</a>
+          <a href="index.html#contact" class="transition hover:text-brand-sun-deep">Contact</a>
+        </nav>
+
+        <div class="flex items-center gap-2">
+          <a href="https://www.facebook.com/people/Laagan-Gear-Rental-Davao/61572226591361/" target="_blank" rel="noopener"
+            class="hidden rounded-full bg-brand-sun px-5 py-2.5 font-display text-sm font-semibold uppercase tracking-wide text-white shadow-sm transition hover:bg-brand-sun-deep sm:inline-block">
+            Book Now
+          </a>
+          <button id="navToggle" aria-label="Open menu"
+            class="grid h-10 w-10 place-items-center rounded-full text-brand-forest md:hidden">
+            <svg id="navIconOpen" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <line x1="4" y1="7" x2="20" y2="7" />
+              <line x1="4" y1="12" x2="20" y2="12" />
+              <line x1="4" y1="17" x2="20" y2="17" />
+            </svg>
+            <svg id="navIconClose" class="hidden" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <line x1="6" y1="6" x2="18" y2="18" />
+              <line x1="6" y1="18" x2="18" y2="6" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div id="navMobile" class="hidden md:hidden">
+        <nav
+          class="mt-2 flex flex-col gap-1 rounded-3xl bg-brand-cream/95 p-3 font-sans text-base font-medium text-brand-forest shadow-xl backdrop-blur">
+          <a href="index.html" class="rounded-xl px-4 py-3 transition hover:bg-brand-sand">Home</a>
+          <a href="index.html#gear" class="rounded-xl px-4 py-3 transition hover:bg-brand-sand">Gear</a>
+          <a href="index.html#adventures" class="rounded-xl px-4 py-3 transition hover:bg-brand-sand">Adventures</a>
+          <a href="index.html#about" class="rounded-xl px-4 py-3 transition hover:bg-brand-sand">About</a>
+          <a href="index.html#contact" class="rounded-xl px-4 py-3 transition hover:bg-brand-sand">Contact</a>
+          <a href="https://www.facebook.com/people/Laagan-Gear-Rental-Davao/61572226591361/" target="_blank" rel="noopener"
+            class="mt-1 rounded-xl bg-brand-sun px-4 py-3 text-center font-display font-semibold uppercase tracking-wide text-white">Book
+            Now</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================ PAGE HEADER ============================ -->
+  <section class="relative overflow-hidden bg-brand-forest pt-32 text-brand-cream lg:pt-40">
+    <!-- decorative mountains bottom -->
+    <svg class="pointer-events-none absolute inset-x-0 bottom-0 w-full text-brand-pine/50" viewBox="0 0 1440 120"
+      fill="currentColor" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 120 L0 70 L260 20 L520 80 L760 25 L1040 85 L1260 30 L1440 80 L1440 120 Z" />
+    </svg>
+
+    <div class="relative mx-auto max-w-7xl px-5 pb-20 lg:px-10">
+      <a href="index.html"
+        class="inline-flex items-center gap-2 font-sans text-sm font-medium text-brand-cream/80 transition hover:text-brand-sun">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        Back to home
+      </a>
+      <p class="mt-6 font-display text-sm font-medium uppercase tracking-[0.35em] text-brand-sun">Our Full Catalog</p>
+      <h1 class="mt-2 font-display text-4xl font-bold uppercase leading-tight text-brand-cream sm:text-5xl lg:text-6xl">
+        All Gear
+      </h1>
+      <p class="mt-5 max-w-xl font-sans text-base text-brand-cream/85">
+        Every piece of gear we rent, sorted by category. Message us for rates and
+        availability.
+      </p>
+
+      <!-- quick category jump links -->
+      <div class="mt-8 flex flex-wrap gap-2"> 
+        <a href="#headlamps" class="rounded-full border border-brand-cream/30 px-4 py-2 font-display text-xs font-semibold uppercase tracking-wide text-brand-cream transition hover:bg-brand-cream hover:text-brand-forest">Headlamps</a>
+        <a href="#trekking-poles" class="rounded-full border border-brand-cream/30 px-4 py-2 font-display text-xs font-semibold uppercase tracking-wide text-brand-cream transition hover:bg-brand-cream hover:text-brand-forest">Trekking Poles</a>
+        <a href="#outdoor-bags" class="rounded-full border border-brand-cream/30 px-4 py-2 font-display text-xs font-semibold uppercase tracking-wide text-brand-cream transition hover:bg-brand-cream hover:text-brand-forest">Outdoor Bags & Vests</a>
+        <a href="#cook-set" class="rounded-full border border-brand-cream/30 px-4 py-2 font-display text-xs font-semibold uppercase tracking-wide text-brand-cream transition hover:bg-brand-cream hover:text-brand-forest">Cook Set</a>
+        <a href="#camping-lights" class="rounded-full border border-brand-cream/30 px-4 py-2 font-display text-xs font-semibold uppercase tracking-wide text-brand-cream transition hover:bg-brand-cream hover:text-brand-forest">Camping Lights</a>
+        <a href="#sets" class="rounded-full border border-brand-cream/30 px-4 py-2 font-display text-xs font-semibold uppercase tracking-wide text-brand-cream transition hover:bg-brand-cream hover:text-brand-forest">Sets</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ GEAR CATALOG ============================ -->
+  <main class="mx-auto max-w-7xl px-5 py-16 lg:px-10 lg:py-24">
+
+    <!-- Headlamps -->
+    <section id="headlamps" class="reveal">
+      <h2 class="title-underline font-display text-2xl font-bold uppercase text-brand-forest sm:text-3xl">Headlamps</h2>
+      <div class="mt-8 grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4">
+        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/headlamps/IMG_4413.jpg" alt="Headlamp" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
+        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/headlamps/IMG_4414.jpg" alt="Headlamp lighting a wall" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
+        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/headlamps/IMG_4408.jpg" alt="Headlamp lighting a wall" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
+        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/headlamps/IMG_4412.jpg" alt="Headlamp" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
+        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/headlamps/IMG_4431.jpg" alt="Headlamps" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
+        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/headlamps/IMG_4562.jpg" alt="Headlamp with strap" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
+        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/headlamps/Screenshot 2026-05-27 130702.png" alt="Headlamp" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
+        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/headlamps/Screenshot 2026-05-27 130749.png" alt="Headlamp" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
+      </div>
+    </section>
+
+    <!-- Trekking Poles -->
+    <section id="trekking-poles" class="reveal mt-16">
+      <h2 class="title-underline font-display text-2xl font-bold uppercase text-brand-forest sm:text-3xl">Trekking Poles</h2>
+      <div class="mt-8 grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4">
+        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/trekking-poles/IMG_4417.jpg" alt="Trekking poles" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
+        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/trekking-poles/IMG_4439.jpg" alt="Trekking pole" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
+        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/trekking-poles/IMG_4559.jpg" alt="CAMEL trekking pole" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
+      </div>
+    </section>
+
+    <!-- Outdoor Bags -->
+    <section id="outdoor-bags" class="reveal mt-16">
+      <h2 class="title-underline font-display text-2xl font-bold uppercase text-brand-forest sm:text-3xl">Outdoor Bags & Vests</h2>
+      <div class="mt-8 grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4">
+        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/outdoor-bags/IMG_4437.jpg" alt="CAMEL hydration pack" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
+        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/outdoor-bags/IMG_5090.jpg" alt="Outdoor 40L backpack" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
+        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/outdoor-bags/IMG_5097.jpg" alt="Sport Trekker backpack" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
+        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/outdoor-bags/IMG_5132.jpg" alt="CAMEL daypack" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
+        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/outdoor-bags/IMG_5138.jpg" alt="CAMEL daypack" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
+        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/outdoor-bags/IMG_5151.jpg" alt="Hiking backpack" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
+        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/outdoor-bags/IMG_5158.jpg" alt="AKTIVE hiking backpack" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
+        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/outdoor-bags/IMG_5164.jpg" alt="Naturehike rolltop pack" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
+        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/outdoor-bags/IMG_5173.jpg" alt="Sport Trekker large pack" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
+        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/outdoor-bags/IMG_5192.jpg" alt="Outdoor 40L backpack" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
+        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/outdoor-bags/IMG_5200.jpg" alt="Daypack" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
+      </div>
+    </section>
+
+    <!-- Cook Set -->
+    <section id="cook-set" class="reveal mt-16">
+      <h2 class="title-underline font-display text-2xl font-bold uppercase text-brand-forest sm:text-3xl">Cook Set</h2>
+      <div class="mt-8 grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4">
+        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/cook-set/IMG_4741.jpg" alt="Camping cook set with stove and pots" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
+      </div>
+    </section>
+
+    <!-- Camping Lights -->
+    <section id="camping-lights" class="reveal mt-16">
+      <h2 class="title-underline font-display text-2xl font-bold uppercase text-brand-forest sm:text-3xl">Camping Lights</h2>
+      <div class="mt-8 grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4">
+        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/camping-lights/Screenshot 2026-05-27 122205.png" alt="Camping lights" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
+        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/camping-lights/Screenshot 2026-05-27 122247.png" alt="Rechargeable camping lantern" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
+        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/camping-lights/Screenshot 2026-05-27 122234.png" alt="Camping light" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
+      </div>
+    </section>
+
+    <!-- Sets -->
+    <section id="sets" class="reveal mt-16">
+      <h2 class="title-underline font-display text-2xl font-bold uppercase text-brand-forest sm:text-3xl">Sets</h2>
+      <div class="mt-8 grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4">
+        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/sets/Screenshot 2026-05-27 130139.png" alt="Complete gear set" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
+        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/sets/Screenshot 2026-05-27 125817.png" alt="Gear set" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
+        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/sets/Screenshot 2026-05-27 125840.png" alt="Gear set" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
+        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/sets/Screenshot 2026-05-27 125906.png" alt="Gear set" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
+        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/sets/Screenshot 2026-05-27 125934.png" alt="Gear set" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
+        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/sets/Screenshot 2026-05-27 130025.png" alt="Tent poles set" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
+        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/sets/Screenshot 2026-05-27 130045.png" alt="Gear set" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
+        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/sets/Screenshot 2026-05-27 130111.png" alt="Gear set" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <div class="reveal mt-16 rounded-3xl bg-brand-forest p-8 text-center text-brand-cream sm:p-12">
+      <h3 class="font-display text-2xl font-bold uppercase sm:text-3xl">Ready to gear up?</h3>
+      <p class="mx-auto mt-3 max-w-md font-sans text-brand-cream/85">Message us to check rates and reserve the gear for your trip.</p>
+      <a href="https://www.facebook.com/people/Laagan-Gear-Rental-Davao/61572226591361/" target="_blank" rel="noopener"
+        class="mt-7 inline-block rounded-full bg-brand-sun px-8 py-3.5 font-display text-base font-semibold uppercase tracking-wide text-white shadow-lg transition hover:bg-brand-sun-deep">
+        Message Us to Book
+      </a>
+    </div>
+  </main>
+
+  <!-- ============================ FOOTER / CONTACT ============================ -->
+  <footer id="contact" class="relative overflow-hidden bg-brand-forest pt-16 text-brand-cream lg:pt-24">
+    <svg class="pointer-events-none absolute inset-x-0 top-0 w-full text-brand-pine/50" viewBox="0 0 1440 120"
+      fill="currentColor" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 120 L0 60 L300 20 L560 80 L820 25 L1100 85 L1300 30 L1440 75 L1440 120 Z" />
+    </svg>
+
+    <div class="relative mx-auto max-w-7xl px-5 pb-12 lg:px-10">
+      <div class="grid grid-cols-1 gap-12 lg:grid-cols-2">
+        <div>
+          <div class="flex items-center gap-3">
+            <img src="assets/logo.PNG" alt="Laagan Gear Rental" class="h-14 w-14 rounded-full bg-brand-cream/95 p-1" />
+            <span class="font-display text-2xl font-bold uppercase tracking-wide">Laagan Gear Rental</span>
+          </div>
+          <p class="mt-5 max-w-md font-sans text-brand-cream/80">
+            Outdoor &amp; hiking gear rental based in Davao City. Ready to gear up?
+            Reach out and we'll get you set for your next adventure.
+          </p>
+          <a href="https://www.facebook.com/people/Laagan-Gear-Rental-Davao/61572226591361/" target="_blank" rel="noopener"
+            class="mt-7 inline-block rounded-full bg-brand-sun px-8 py-3.5 font-display text-base font-semibold uppercase tracking-wide text-white shadow-lg transition hover:bg-brand-sun-deep">
+            Message Us to Book
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 gap-7 sm:grid-cols-2">
+          <div>
+            <h3 class="font-display text-sm font-semibold uppercase tracking-[0.2em] text-brand-sun">Location</h3>
+            <p class="mt-3 font-sans text-brand-cream/85">
+              Cabantian, Davao City<br />
+              <span class="text-brand-cream/60">Lower Cabantian, in front of Eagle Gasoline Station</span>
+            </p>
+            <h3 class="mt-7 font-display text-sm font-semibold uppercase tracking-[0.2em] text-brand-sun">Hours</h3>
+            <p class="mt-3 font-sans text-brand-cream/85">
+              Mon – Sun · 8:00 AM – 8:00 PM
+            </p>
+          </div>
+          <div>
+            <h3 class="font-display text-sm font-semibold uppercase tracking-[0.2em] text-brand-sun">Get in Touch</h3>
+            <ul class="mt-3 space-y-3 font-sans text-brand-cream/85">
+              <li>
+                <a href="https://www.facebook.com/people/Laagan-Gear-Rental-Davao/61572226591361/" target="_blank" rel="noopener" class="group flex items-center gap-3 transition hover:text-brand-sun">
+                  <span class="grid h-9 w-9 place-items-center rounded-full bg-brand-pine">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.21 2 11.4c0 2.96 1.46 5.6 3.75 7.33V22l3.43-1.88c.91.25 1.87.39 2.82.39 5.52 0 10-4.21 10-9.4S17.52 2 12 2Zm1.07 12.6-2.55-2.72-4.98 2.72 5.48-5.82 2.61 2.72 4.92-2.72-5.5 5.82Z"/></svg>
+                  </span>
+                  Laagan Gear Rental Davao
+                </a>
+              </li>
+              <li>
+                <a href="tel:+639632005058" class="group flex items-center gap-3 transition hover:text-brand-sun">
+                  <span class="grid h-9 w-9 place-items-center rounded-full bg-brand-pine">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92Z"/></svg>
+                  </span>
+                  0963 200 5058
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/laagangearrentaldavao" target="_blank" rel="noopener" class="group flex items-center gap-3 transition hover:text-brand-sun">
+                  <span class="grid h-9 w-9 place-items-center rounded-full bg-brand-pine">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+                  </span>
+                  @laagangearrentaldavao
+                </a>
+              </li>
+              <li>
+                <a href="https://www.tiktok.com/@laagan.gear.rental.davao" target="_blank" rel="noopener" class="group flex items-center gap-3 transition hover:text-brand-sun">
+                  <span class="grid h-9 w-9 place-items-center rounded-full bg-brand-pine">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3c.3 2.2 1.6 3.9 3.8 4.2v2.6c-1.3.1-2.6-.2-3.8-.9v5.9c0 3.1-2.3 5.2-5.2 5.2-2.8 0-5.1-2.2-5.1-5 0-2.9 2.4-5.1 5.6-4.8v2.7c-.5-.1-1-.2-1.5 0-1.1.3-1.8 1.2-1.7 2.4.1 1.1 1 2 2.1 2 1.2 0 2.1-.9 2.1-2.2V3h3.7Z"/></svg>
+                  </span>
+                  @laagan.gear.rental.davao
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-12 border-t border-brand-cream/15 pt-6 text-center font-sans text-sm text-brand-cream/50">
+        © <span id="year"></span> Laagan Gear Rental · Davao City. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================ JS ============================ -->
+  <script>
+    // Preloader: show the hiking animation for a fixed 3 seconds
+    const hidePreloader = () => {
+      document.body.classList.add('loaded');
+      document.body.classList.remove('is-loading');
+    };
+    setTimeout(hidePreloader, 3000);
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile menu toggle
+    const navToggle = document.getElementById('navToggle');
+    const navMobile = document.getElementById('navMobile');
+    const iconOpen = document.getElementById('navIconOpen');
+    const iconClose = document.getElementById('navIconClose');
+    const setNavOpen = (open) => {
+      navMobile.classList.toggle('hidden', !open);
+      iconOpen.classList.toggle('hidden', open);
+      iconClose.classList.toggle('hidden', !open);
+    };
+    navToggle.addEventListener('click', () => setNavOpen(navMobile.classList.contains('hidden')));
+    navMobile.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setNavOpen(false)));
+
+    // Reveal-on-scroll
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add('is-in');
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.08, rootMargin: '0px 0px -8% 0px' });
+      document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    } else {
+      document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-in'));
+    }
+  </script>
+</body>
+
+</html>
