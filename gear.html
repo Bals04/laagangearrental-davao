@@ -87,6 +87,103 @@
       border-radius: 999px;
     }
 
+    /* Playful trail-style navigation */
+    .outdoor-bar {
+      position: relative;
+      background-color: #1E3D2B;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='280' height='82' viewBox='0 0 280 82'><g fill='none' stroke='%23F6E7CB' stroke-width='1' opacity='.09'><path d='M-20 62C22 18 50 18 91 54s75 35 116-3 70-31 100-5'/><path d='M-12 74C27 35 54 33 91 65s73 30 110-2 67-29 99-8'/><path d='M19 16c23-19 53-18 76 2s45 19 68-1'/></g><path d='M12 51c39-26 67-16 93 2s57 18 91-5 57-20 80-5' fill='none' stroke='%23EC8B3C' stroke-width='2' stroke-linecap='round' stroke-dasharray='3 8' opacity='.35'/></svg>");
+      box-shadow: 0 5px 0 rgba(236, 139, 60, 0.42), 0 16px 30px rgba(30, 61, 43, 0.22);
+    }
+
+    .fun-nav {
+      position: relative;
+      isolation: isolate;
+      background: linear-gradient(135deg, rgba(246, 231, 203, 0.95), rgba(239, 217, 180, 0.78));
+    }
+
+    .fun-nav::before {
+      content: "Trail menu";
+      position: absolute;
+      z-index: 3;
+      top: -0.55rem;
+      left: 1.1rem;
+      padding: 0.14rem 0.5rem;
+      transform: rotate(-2deg);
+      border-radius: 999px;
+      background: #EC8B3C;
+      color: white;
+      font-family: Oswald, system-ui, sans-serif;
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      box-shadow: 0 2px 0 rgba(30, 61, 43, 0.25);
+    }
+
+    .fun-nav::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      right: 14px;
+      bottom: 7px;
+      left: 14px;
+      border-top: 2px dashed rgba(92, 122, 82, 0.3);
+    }
+
+    .fun-nav a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      position: relative;
+      transition: transform 180ms ease, color 180ms ease, background 180ms ease, box-shadow 180ms ease;
+    }
+
+    .fun-nav a:hover {
+      transform: translateY(-3px) rotate(-1deg);
+      background: #F6E7CB;
+      color: #CF7322;
+      box-shadow: 0 5px 0 rgba(30, 61, 43, 0.12);
+    }
+
+    .fun-nav a:nth-child(even):hover {
+      transform: translateY(-3px) rotate(1deg);
+    }
+
+    .fun-nav a.is-current {
+      transform: rotate(-1deg);
+      background: #1E3D2B;
+      color: #F6E7CB;
+      box-shadow: 0 4px 0 #EC8B3C;
+    }
+
+    .nav-icon {
+      display: grid;
+      width: 1.65rem;
+      height: 1.65rem;
+      place-items: center;
+      border: 1px solid rgba(30, 61, 43, 0.12);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.55);
+      font-size: 0.82rem;
+      line-height: 1;
+      transition: transform 180ms ease, background 180ms ease;
+    }
+
+    .fun-nav a:hover .nav-icon {
+      transform: rotate(-10deg) scale(1.12);
+      background: #EC8B3C;
+    }
+
+    .fun-nav a.is-current .nav-icon {
+      background: #EC8B3C;
+    }
+
+    .mobile-fun a:not(.mobile-book) {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
     .reveal {
       opacity: 1;
       transform: none;
@@ -212,29 +309,29 @@
   <!-- ============================ NAV ============================ -->
   <header id="nav" class="fixed inset-x-0 top-0 z-50 transition-all duration-300">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
-      <div class="mt-3 flex items-center justify-between rounded-full border-2 border-brand-forest bg-brand-cream/90 px-4 py-2.5 shadow-lg backdrop-blur-md sm:px-6">
+      <div class="outdoor-bar mt-3 flex items-center justify-between rounded-full border-2 border-brand-sun/70 px-4 py-2.5 backdrop-blur-md sm:px-6">
         <a href="index.html" class="flex items-center gap-3">
-          <img src="assets/logo.PNG" alt="Laagan Gear Rental logo" class="h-11 w-11 rounded-full object-contain" />
-          <span class="hidden font-display text-lg font-semibold uppercase tracking-wide text-brand-forest sm:block">
+          <img src="assets/logo.PNG" alt="Laagan Gear Rental logo" class="h-11 w-11 rounded-full bg-brand-cream p-1 object-contain ring-2 ring-brand-sun/80 ring-offset-2 ring-offset-brand-forest" />
+          <span class="hidden font-display text-lg font-semibold uppercase tracking-wide text-brand-cream sm:block">
             Laagan Gear Rental
           </span>
         </a>
 
-        <nav class="hidden items-center gap-7 font-sans text-sm font-medium text-brand-forest md:flex">
-          <a href="index.html" class="transition hover:text-brand-sun-deep">Home</a>
-          <a href="index.html#gear" class="transition hover:text-brand-sun-deep">Gear</a>
-          <a href="index.html#adventures" class="transition hover:text-brand-sun-deep">Adventures</a>
-          <a href="index.html#about" class="transition hover:text-brand-sun-deep">About</a>
-          <a href="index.html#contact" class="transition hover:text-brand-sun-deep">Contact</a>
+        <nav class="fun-nav hidden items-center gap-1 rounded-full border border-brand-forest/15 p-1 font-sans text-sm font-semibold text-brand-forest shadow-inner lg:flex">
+          <a href="index.html" class="rounded-full px-2.5 py-1.5"><span class="nav-icon" aria-hidden="true">&#127968;</span>Home</a>
+          <a href="gear.html" aria-current="page" class="is-current rounded-full px-2.5 py-1.5"><span class="nav-icon" aria-hidden="true">&#9978;</span>Gear</a>
+          <a href="index.html#adventures" class="rounded-full px-2.5 py-1.5"><span class="nav-icon" aria-hidden="true">&#129406;</span>Adventures</a>
+          <a href="index.html#about" class="rounded-full px-2.5 py-1.5"><span class="nav-icon" aria-hidden="true">&#9968;</span>About</a>
+          <a href="index.html#contact" class="rounded-full px-2.5 py-1.5"><span class="nav-icon" aria-hidden="true">&#128172;</span>Contact</a>
         </nav>
 
         <div class="flex items-center gap-2">
           <a href="https://www.facebook.com/people/Laagan-Gear-Rental-Davao/61572226591361/" target="_blank" rel="noopener"
-            class="hidden rounded-full bg-brand-sun px-5 py-2.5 font-display text-sm font-semibold uppercase tracking-wide text-white shadow-sm transition hover:bg-brand-sun-deep sm:inline-block">
+            class="hidden rounded-full bg-brand-sun px-5 py-2.5 font-display text-sm font-semibold uppercase tracking-wide text-white shadow-md transition hover:-translate-y-0.5 hover:bg-brand-sun-deep hover:shadow-lg sm:inline-block">
             Book Now
           </a>
           <button id="navToggle" aria-label="Open menu"
-            class="grid h-10 w-10 place-items-center rounded-full text-brand-forest md:hidden">
+            class="grid h-10 w-10 place-items-center rounded-full border border-brand-cream/30 bg-brand-cream text-brand-forest shadow-sm transition hover:rotate-6 hover:bg-brand-sun hover:text-white lg:hidden">
             <svg id="navIconOpen" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
               <line x1="4" y1="7" x2="20" y2="7" />
@@ -251,16 +348,16 @@
       </div>
 
       <!-- Mobile menu -->
-      <div id="navMobile" class="hidden md:hidden">
+      <div id="navMobile" class="hidden lg:hidden">
         <nav
-          class="mt-2 flex flex-col gap-1 rounded-3xl bg-brand-cream/95 p-3 font-sans text-base font-medium text-brand-forest shadow-xl backdrop-blur">
-          <a href="index.html" class="rounded-xl px-4 py-3 transition hover:bg-brand-sand">Home</a>
-          <a href="index.html#gear" class="rounded-xl px-4 py-3 transition hover:bg-brand-sand">Gear</a>
-          <a href="index.html#adventures" class="rounded-xl px-4 py-3 transition hover:bg-brand-sand">Adventures</a>
-          <a href="index.html#about" class="rounded-xl px-4 py-3 transition hover:bg-brand-sand">About</a>
-          <a href="index.html#contact" class="rounded-xl px-4 py-3 transition hover:bg-brand-sand">Contact</a>
+          class="mobile-fun mt-2 flex flex-col gap-1 rounded-3xl border border-brand-forest/15 bg-brand-cream/95 p-3 font-sans text-base font-semibold text-brand-forest shadow-xl backdrop-blur">
+          <a href="index.html" class="rounded-xl border border-transparent px-4 py-2.5 transition hover:border-brand-forest/10 hover:bg-brand-sand"><span class="nav-icon" aria-hidden="true">&#127968;</span>Home</a>
+          <a href="gear.html" aria-current="page" class="rounded-xl bg-brand-forest px-4 py-2.5 text-brand-cream shadow-sm"><span class="nav-icon" aria-hidden="true">&#9978;</span>Gear</a>
+          <a href="index.html#adventures" class="rounded-xl border border-transparent px-4 py-2.5 transition hover:border-brand-forest/10 hover:bg-brand-sand"><span class="nav-icon" aria-hidden="true">&#129406;</span>Adventures</a>
+          <a href="index.html#about" class="rounded-xl border border-transparent px-4 py-2.5 transition hover:border-brand-forest/10 hover:bg-brand-sand"><span class="nav-icon" aria-hidden="true">&#9968;</span>About</a>
+          <a href="index.html#contact" class="rounded-xl border border-transparent px-4 py-2.5 transition hover:border-brand-forest/10 hover:bg-brand-sand"><span class="nav-icon" aria-hidden="true">&#128172;</span>Contact</a>
           <a href="https://www.facebook.com/people/Laagan-Gear-Rental-Davao/61572226591361/" target="_blank" rel="noopener"
-            class="mt-1 rounded-xl bg-brand-sun px-4 py-3 text-center font-display font-semibold uppercase tracking-wide text-white">Book
+            class="mobile-book mt-1 rounded-xl bg-brand-sun px-4 py-3 text-center font-display font-semibold uppercase tracking-wide text-white shadow-md">Book
             Now</a>
         </nav>
       </div>
@@ -290,95 +387,55 @@
         availability.
       </p>
 
-      <!-- quick category jump links -->
-      <div class="mt-8 flex flex-wrap gap-2"> 
-        <a href="#headlamps" class="rounded-full border border-brand-cream/30 px-4 py-2 font-display text-xs font-semibold uppercase tracking-wide text-brand-cream transition hover:bg-brand-cream hover:text-brand-forest">Headlamps</a>
-        <a href="#trekking-poles" class="rounded-full border border-brand-cream/30 px-4 py-2 font-display text-xs font-semibold uppercase tracking-wide text-brand-cream transition hover:bg-brand-cream hover:text-brand-forest">Trekking Poles</a>
-        <a href="#outdoor-bags" class="rounded-full border border-brand-cream/30 px-4 py-2 font-display text-xs font-semibold uppercase tracking-wide text-brand-cream transition hover:bg-brand-cream hover:text-brand-forest">Outdoor Bags & Vests</a>
-        <a href="#cook-set" class="rounded-full border border-brand-cream/30 px-4 py-2 font-display text-xs font-semibold uppercase tracking-wide text-brand-cream transition hover:bg-brand-cream hover:text-brand-forest">Cook Set</a>
-        <a href="#camping-lights" class="rounded-full border border-brand-cream/30 px-4 py-2 font-display text-xs font-semibold uppercase tracking-wide text-brand-cream transition hover:bg-brand-cream hover:text-brand-forest">Camping Lights</a>
-        <a href="#sets" class="rounded-full border border-brand-cream/30 px-4 py-2 font-display text-xs font-semibold uppercase tracking-wide text-brand-cream transition hover:bg-brand-cream hover:text-brand-forest">Sets</a>
-      </div>
+      <!-- clickable gear directory -->
+      <nav aria-label="Gear directory" class="mt-9 grid gap-3 sm:grid-cols-3">
+        <a href="#tents" class="group rounded-2xl border border-brand-cream/25 bg-brand-cream/10 p-5 backdrop-blur-sm transition hover:-translate-y-1 hover:border-brand-sun hover:bg-brand-cream hover:text-brand-forest">
+          <span class="font-display text-xs font-semibold uppercase tracking-[0.25em] text-brand-sun">01</span>
+          <strong class="mt-2 flex items-center justify-between font-display text-xl uppercase">
+            Tents <span aria-hidden="true" class="transition group-hover:translate-x-1">&rarr;</span>
+          </strong>
+          <span class="mt-2 block font-sans text-xs opacity-75">2P &middot; 3P &middot; 6P</span>
+        </a>
+        <a href="#hiking-bags-vests" class="group rounded-2xl border border-brand-cream/25 bg-brand-cream/10 p-5 backdrop-blur-sm transition hover:-translate-y-1 hover:border-brand-sun hover:bg-brand-cream hover:text-brand-forest">
+          <span class="font-display text-xs font-semibold uppercase tracking-[0.25em] text-brand-sun">02</span>
+          <strong class="mt-2 flex items-center justify-between font-display text-xl uppercase">
+            Bags &amp; Vests <span aria-hidden="true" class="transition group-hover:translate-x-1">&rarr;</span>
+          </strong>
+          <span class="mt-2 block font-sans text-xs opacity-75">55L to 1L &middot; hiking vests</span>
+        </a>
+        <a href="#outdoor-essentials" class="group rounded-2xl border border-brand-cream/25 bg-brand-cream/10 p-5 backdrop-blur-sm transition hover:-translate-y-1 hover:border-brand-sun hover:bg-brand-cream hover:text-brand-forest">
+          <span class="font-display text-xs font-semibold uppercase tracking-[0.25em] text-brand-sun">03</span>
+          <strong class="mt-2 flex items-center justify-between font-display text-xl uppercase">
+            Outdoor Essentials <span aria-hidden="true" class="transition group-hover:translate-x-1">&rarr;</span>
+          </strong>
+          <span class="mt-2 block font-sans text-xs opacity-75">Camp, cook, sleep &amp; hike</span>
+        </a>
+      </nav>
     </div>
   </section>
 
   <!-- ============================ GEAR CATALOG ============================ -->
   <main class="mx-auto max-w-7xl px-5 py-16 lg:px-10 lg:py-24">
 
-    <!-- Headlamps -->
-    <section id="headlamps" class="reveal">
-      <h2 class="title-underline font-display text-2xl font-bold uppercase text-brand-forest sm:text-3xl">Headlamps</h2>
-      <div class="mt-8 grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4">
-        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/headlamps/IMG_4413.jpg" alt="Headlamp" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
-        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/headlamps/IMG_4414.jpg" alt="Headlamp lighting a wall" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
-        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/headlamps/IMG_4408.jpg" alt="Headlamp lighting a wall" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
-        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/headlamps/IMG_4412.jpg" alt="Headlamp" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
-        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/headlamps/IMG_4431.jpg" alt="Headlamps" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
-        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/headlamps/IMG_4562.jpg" alt="Headlamp with strap" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
-        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/headlamps/Screenshot 2026-05-27 130702.png" alt="Headlamp" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
-        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/headlamps/Screenshot 2026-05-27 130749.png" alt="Headlamp" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
-      </div>
+    <section id="tents" class="reveal">
+      <p class="font-display text-sm font-semibold uppercase tracking-[0.25em] text-brand-sun">Directory 01</p>
+      <h2 class="title-underline mt-2 font-display text-3xl font-bold uppercase text-brand-forest sm:text-4xl">Tents</h2>
+      <nav id="tents-links" aria-label="Tent sizes" class="mt-7 flex flex-wrap gap-2"></nav>
+      <div id="tents-catalog" class="mt-9 space-y-12"></div>
     </section>
 
-    <!-- Trekking Poles -->
-    <section id="trekking-poles" class="reveal mt-16">
-      <h2 class="title-underline font-display text-2xl font-bold uppercase text-brand-forest sm:text-3xl">Trekking Poles</h2>
-      <div class="mt-8 grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4">
-        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/trekking-poles/IMG_4417.jpg" alt="Trekking poles" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
-        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/trekking-poles/IMG_4439.jpg" alt="Trekking pole" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
-        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/trekking-poles/IMG_4559.jpg" alt="CAMEL trekking pole" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
-      </div>
+    <section id="hiking-bags-vests" class="reveal mt-24 border-t border-brand-forest/15 pt-16">
+      <p class="font-display text-sm font-semibold uppercase tracking-[0.25em] text-brand-sun">Directory 02</p>
+      <h2 class="title-underline mt-2 font-display text-3xl font-bold uppercase text-brand-forest sm:text-4xl">Hiking Bags &amp; Vests</h2>
+      <nav id="bags-links" aria-label="Bag and vest sizes" class="mt-7 flex flex-wrap gap-2"></nav>
+      <div id="bags-catalog" class="mt-9 space-y-12"></div>
     </section>
 
-    <!-- Outdoor Bags -->
-    <section id="outdoor-bags" class="reveal mt-16">
-      <h2 class="title-underline font-display text-2xl font-bold uppercase text-brand-forest sm:text-3xl">Outdoor Bags & Vests</h2>
-      <div class="mt-8 grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4">
-        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/outdoor-bags/IMG_4437.jpg" alt="CAMEL hydration pack" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
-        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/outdoor-bags/IMG_5090.jpg" alt="Outdoor 40L backpack" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
-        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/outdoor-bags/IMG_5097.jpg" alt="Sport Trekker backpack" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
-        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/outdoor-bags/IMG_5132.jpg" alt="CAMEL daypack" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
-        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/outdoor-bags/IMG_5138.jpg" alt="CAMEL daypack" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
-        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/outdoor-bags/IMG_5151.jpg" alt="Hiking backpack" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
-        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/outdoor-bags/IMG_5158.jpg" alt="AKTIVE hiking backpack" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
-        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/outdoor-bags/IMG_5164.jpg" alt="Naturehike rolltop pack" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
-        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/outdoor-bags/IMG_5173.jpg" alt="Sport Trekker large pack" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
-        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/outdoor-bags/IMG_5192.jpg" alt="Outdoor 40L backpack" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
-        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/outdoor-bags/IMG_5200.jpg" alt="Daypack" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
-      </div>
-    </section>
-
-    <!-- Cook Set -->
-    <section id="cook-set" class="reveal mt-16">
-      <h2 class="title-underline font-display text-2xl font-bold uppercase text-brand-forest sm:text-3xl">Cook Set</h2>
-      <div class="mt-8 grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4">
-        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/cook-set/IMG_4741.jpg" alt="Camping cook set with stove and pots" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
-      </div>
-    </section>
-
-    <!-- Camping Lights -->
-    <section id="camping-lights" class="reveal mt-16">
-      <h2 class="title-underline font-display text-2xl font-bold uppercase text-brand-forest sm:text-3xl">Camping Lights</h2>
-      <div class="mt-8 grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4">
-        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/camping-lights/Screenshot 2026-05-27 122205.png" alt="Camping lights" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
-        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/camping-lights/Screenshot 2026-05-27 122247.png" alt="Rechargeable camping lantern" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
-        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/camping-lights/Screenshot 2026-05-27 122234.png" alt="Camping light" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
-      </div>
-    </section>
-
-    <!-- Sets -->
-    <section id="sets" class="reveal mt-16">
-      <h2 class="title-underline font-display text-2xl font-bold uppercase text-brand-forest sm:text-3xl">Sets</h2>
-      <div class="mt-8 grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4">
-        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/sets/Screenshot 2026-05-27 130139.png" alt="Complete gear set" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
-        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/sets/Screenshot 2026-05-27 125817.png" alt="Gear set" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
-        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/sets/Screenshot 2026-05-27 125840.png" alt="Gear set" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
-        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/sets/Screenshot 2026-05-27 125906.png" alt="Gear set" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
-        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/sets/Screenshot 2026-05-27 125934.png" alt="Gear set" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
-        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/sets/Screenshot 2026-05-27 130025.png" alt="Tent poles set" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
-        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/sets/Screenshot 2026-05-27 130045.png" alt="Gear set" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
-        <figure class="overflow-hidden rounded-3xl bg-brand-cream shadow-sm"><img src="assets/gears/sets/Screenshot 2026-05-27 130111.png" alt="Gear set" loading="lazy" class="aspect-[3/4] h-full w-full object-cover" /></figure>
-      </div>
+    <section id="outdoor-essentials" class="reveal mt-24 border-t border-brand-forest/15 pt-16">
+      <p class="font-display text-sm font-semibold uppercase tracking-[0.25em] text-brand-sun">Directory 03</p>
+      <h2 class="title-underline mt-2 font-display text-3xl font-bold uppercase text-brand-forest sm:text-4xl">Outdoor Essentials</h2>
+      <nav id="essentials-links" aria-label="Outdoor essentials" class="mt-7 flex flex-wrap gap-2"></nav>
+      <div id="essentials-catalog" class="mt-9 space-y-12"></div>
     </section>
 
     <!-- CTA -->
@@ -482,6 +539,86 @@
       document.body.classList.remove('is-loading');
     };
     setTimeout(hidePreloader, 3000);
+
+    // Categorized from the numbered artwork in assets/new/.
+    const gearDirectory = {
+      tents: {
+        links: [
+          ['2P Tent', 'tent-2p'], ['3P Tent', 'tent-3p'], ['6P Tent', 'tent-6p']
+        ],
+        items: [
+          { id: 'tent-2p', title: '2-Person Tents', note: 'Naturehike Cloud Up and Decathlon models', images: [10, 11, 12, 13, 14, 15, 16, 17, 18, 19] },
+          { id: 'tent-3p', title: '3-Person Tent', note: 'Naturehike three-person model', images: [20, 21, 22, 23, 24] },
+          { id: 'tent-6p', title: '6-Person Tent', note: 'Brown Trekker six-person model', images: [25, 26, 27, 28, 29] }
+        ]
+      },
+      bags: {
+        links: [
+          ['55L', 'bag-55l'], ['45L', 'bag-45l'], ['40L', 'bag-40l'], ['25L', 'bag-25l'],
+          ['12L', 'bag-12l'], ['8L', 'vest-8l'], ['2L', 'vest-2l'], ['1L', 'vest-1l'], ['20L Dry Bag', 'dry-bag-20l']
+        ],
+        items: [
+          { id: 'bag-55l', title: '55L Hiking Bag', note: 'Brown Trekker', images: [30, 31] },
+          { id: 'bag-45l', title: '45L Hiking Bag', note: 'Brown Trekker', images: [32] },
+          { id: 'bag-40l', title: '40L Hiking Bag', note: 'Outdoor backpack', images: [33] },
+          { id: 'bag-25l', title: '25L Hiking Bag', note: 'Brown Trekker', images: [34, 35] },
+          { id: 'bag-12l', title: '12L Hiking Bags', note: 'Camel beige and black models', images: [34, 36, 37, 38] },
+          { id: 'vest-8l', title: '8L Hiking Vest', note: 'Hydration vest', images: [39, 40] },
+          { id: 'vest-2l', title: '2L Hiking Vest', note: 'Hydration vest', images: [41] },
+          { id: 'vest-1l', title: '1L Hiking Vest', note: 'Lightweight running vest', images: [42, 43] },
+          { id: 'dry-bag-20l', title: '20L Dry Bag', note: 'Naturehike waterproof pack', images: [44, 45, 46] }
+        ]
+      },
+      essentials: {
+        links: [
+          ['Trekking Pole', 'poles-headlamps'], ['Headlamps', 'poles-headlamps'],
+          ['Sleeping Bag', 'sleep-system'], ['Camping Light', 'sleep-system'], ['Eggnest Mat', 'sleep-system'],
+          ['Cookset', 'camp-kitchen'], ['Portable Stove', 'camp-kitchen'], ['Butane Canister', 'camp-kitchen'],
+          ['Tent Tarp Flysheet', 'shelter-comfort'], ['Cooler', 'shelter-comfort'], ['Hammock', 'shelter-comfort'],
+          ['Long Table & Monobloc', 'long-table-monobloc'], ['Camping Tables & Chairs', 'camping-furniture'],
+          ['Airbed', 'airbed-shoes'], ['Hiking Shoes', 'airbed-shoes']
+        ],
+        items: [
+          { id: 'poles-headlamps', title: 'Trekking Poles & Headlamps', note: 'Including 1200mAh and 2000mAh headlamps', images: [47, 48] },
+          { id: 'sleep-system', title: 'Sleeping Bag, Camping Light & Eggnest Mat', note: 'Camp sleeping and lighting essentials', images: [49, 50] },
+          { id: 'camp-kitchen', title: 'Cookset, Portable Stove & Butane Canister', note: 'Compact outdoor kitchen equipment', images: [51, 52] },
+          { id: 'shelter-comfort', title: 'Tent Tarp Flysheet, Cooler & Hammock', note: 'Shelter, storage and camp comfort', images: [53, 54, 55] },
+          { id: 'long-table-monobloc', title: 'Long Foldable Table & Monobloc Chairs', note: 'Full-size camp furniture', images: [56, 57] },
+          { id: 'camping-furniture', title: 'Camping Tables & Chairs', note: 'Long and small tables, big and small chairs', images: [58, 59, 60] },
+          { id: 'airbed-shoes', title: 'Automatic Inflatable Airbed & Hiking Shoes', note: 'Women\'s hiking shoes in sizes 37–40', images: [61] }
+        ]
+      }
+    };
+
+    const renderCatalog = (key, linksId, catalogId) => {
+      const category = gearDirectory[key];
+      const linkClass = 'rounded-full border border-brand-forest/25 bg-white/35 px-4 py-2 font-display text-xs font-semibold uppercase tracking-wide text-brand-forest transition hover:border-brand-sun hover:bg-brand-sun hover:text-white';
+      document.getElementById(linksId).innerHTML = category.links
+        .map(([label, id]) => `<a href="#${id}" class="${linkClass}">${label}</a>`)
+        .join('');
+
+      document.getElementById(catalogId).innerHTML = category.items.map((item) => `
+        <article id="${item.id}" class="scroll-mt-32 rounded-3xl border border-brand-forest/10 bg-white/30 p-4 shadow-sm sm:p-6">
+          <div class="mb-5 flex flex-wrap items-end justify-between gap-2">
+            <div>
+              <h3 class="font-display text-2xl font-bold uppercase text-brand-forest">${item.title}</h3>
+              <p class="mt-1 font-sans text-sm text-brand-ink/65">${item.note}</p>
+            </div>
+            <a href="#${key === 'tents' ? 'tents' : key === 'bags' ? 'hiking-bags-vests' : 'outdoor-essentials'}" class="font-display text-xs font-semibold uppercase tracking-wide text-brand-sun hover:text-brand-sun-deep">Back to directory &uarr;</a>
+          </div>
+          <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+            ${item.images.map((number) => `
+              <a href="assets/new/${number}.png" target="_blank" rel="noopener" class="group relative overflow-hidden rounded-2xl bg-brand-sand shadow-sm" aria-label="Open ${item.title} image ${number} full size">
+                <img src="assets/new/${number}.png" alt="${item.title}" loading="lazy" class="aspect-square h-full w-full object-cover transition duration-300 group-hover:scale-105" />
+                <span class="absolute bottom-2 right-2 rounded-full bg-brand-forest/85 px-2.5 py-1 font-display text-[10px] font-semibold uppercase tracking-wide text-white opacity-0 transition group-hover:opacity-100">View full size</span>
+              </a>`).join('')}
+          </div>
+        </article>`).join('');
+    };
+
+    renderCatalog('tents', 'tents-links', 'tents-catalog');
+    renderCatalog('bags', 'bags-links', 'bags-catalog');
+    renderCatalog('essentials', 'essentials-links', 'essentials-catalog');
 
     document.getElementById('year').textContent = new Date().getFullYear();
 
