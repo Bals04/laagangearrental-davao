@@ -378,6 +378,7 @@
         <nav class="fun-nav hidden items-center gap-1 rounded-full border border-brand-forest/15 p-1 font-sans text-sm font-semibold text-brand-forest shadow-inner lg:flex">
           <a href="gear.html" class="rounded-full px-2.5 py-1.5"><span class="nav-icon" aria-hidden="true">&#9978;</span>Gear</a>
           <a href="#gallery" class="rounded-full px-2.5 py-1.5"><span class="nav-icon" aria-hidden="true">&#128247;</span>Gallery</a>
+          <a href="#rates" class="rounded-full px-2.5 py-1.5"><span class="nav-icon font-display font-bold text-brand-forest" aria-hidden="true">&#8369;</span>Rates</a>
           <a href="#adventures" class="rounded-full px-2.5 py-1.5"><span class="nav-icon" aria-hidden="true">&#129406;</span>Adventures</a>
           <a href="#about" class="rounded-full px-2.5 py-1.5"><span class="nav-icon" aria-hidden="true">&#9968;</span>About</a>
           <a href="#contact" class="rounded-full px-2.5 py-1.5"><span class="nav-icon" aria-hidden="true">&#128172;</span>Contact</a>
@@ -411,6 +412,7 @@
           class="mobile-fun mt-2 flex flex-col gap-1 rounded-3xl border border-brand-forest/15 bg-brand-cream/95 p-3 font-sans text-base font-semibold text-brand-forest shadow-xl backdrop-blur">
           <a href="gear.html" class="rounded-xl border border-transparent px-4 py-2.5 transition hover:border-brand-forest/10 hover:bg-brand-sand"><span class="nav-icon" aria-hidden="true">&#9978;</span>Gear</a>
           <a href="#gallery" class="rounded-xl border border-transparent px-4 py-2.5 transition hover:border-brand-forest/10 hover:bg-brand-sand"><span class="nav-icon" aria-hidden="true">&#128247;</span>Gallery</a>
+          <a href="#rates" class="rounded-xl border border-transparent px-4 py-2.5 transition hover:border-brand-forest/10 hover:bg-brand-sand"><span class="nav-icon font-display font-bold text-brand-forest" aria-hidden="true">&#8369;</span>Rates</a>
           <a href="#adventures" class="rounded-xl border border-transparent px-4 py-2.5 transition hover:border-brand-forest/10 hover:bg-brand-sand"><span class="nav-icon" aria-hidden="true">&#129406;</span>Adventures</a>
           <a href="#about" class="rounded-xl border border-transparent px-4 py-2.5 transition hover:border-brand-forest/10 hover:bg-brand-sand"><span class="nav-icon" aria-hidden="true">&#9968;</span>About</a>
           <a href="#contact" class="rounded-xl border border-transparent px-4 py-2.5 transition hover:border-brand-forest/10 hover:bg-brand-sand"><span class="nav-icon" aria-hidden="true">&#128172;</span>Contact</a>
@@ -584,8 +586,9 @@
           Gear We Rent
         </h2>
         <p class="mt-6 font-sans text-base text-brand-ink/80">
-          From tents to trekking essentials, here's what's available. Message us
-          for current rates and availability.
+          From tents to trekking essentials, here's what's available. See the
+          <a href="#rates" class="font-semibold text-brand-sun-deep underline underline-offset-4 hover:text-brand-forest">rental rates</a>
+          below, then message us to check availability.
         </p>
       </div>
 
@@ -745,6 +748,52 @@
     </div>
   </section>
 
+  <!-- ============================ RENTAL RATES ============================ -->
+  <section id="rates" class="relative overflow-hidden bg-brand-sand/60 py-16 lg:py-24">
+    <!-- side ornament: tent (left) -->
+    <svg class="pointer-events-none absolute -left-8 top-28 hidden text-brand-forest/10 lg:block" width="180"
+      height="140" viewBox="0 0 180 140" fill="currentColor" aria-hidden="true">
+      <path d="M90 10 L170 130 L10 130 Z" />
+      <path d="M90 60 L115 130 L65 130 Z" fill="#EFD9B4" />
+    </svg>
+    <!-- side ornament: lantern (right) -->
+    <svg class="pointer-events-none absolute -right-4 bottom-24 hidden text-brand-sun/25 lg:block" width="110"
+      height="170" viewBox="0 0 80 124" fill="currentColor" aria-hidden="true">
+      <path d="M30 4 h20 v10 h-20 Z" />
+      <path d="M22 18 h36 l6 12 v70 l-6 12 h-36 l-6 -12 v-70 Z" />
+      <path d="M40 44 c-8 12 -8 22 0 30 c8 -8 8 -18 0 -30 Z" fill="#F6E7CB" />
+    </svg>
+
+    <div class="relative mx-auto max-w-7xl px-5 lg:px-10">
+      <div class="reveal flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+        <div class="max-w-2xl">
+          <p class="font-display text-sm font-medium uppercase tracking-[0.3em] text-brand-sun-deep">Price List</p>
+          <h2 class="title-underline mt-2 font-display text-3xl font-bold uppercase text-brand-forest sm:text-4xl">
+            Rental Rates
+          </h2>
+          <p class="mt-6 font-sans text-base text-brand-ink/80">
+            Rates are per item, for a 2 days 1 night or 3 days 2 nights trip.
+            Going longer or renting a full set? Message us for a package.
+          </p>
+        </div>
+        <!-- duration legend -->
+        <div class="flex shrink-0 gap-2 font-display text-xs font-semibold uppercase tracking-wide">
+          <span class="rounded-full bg-brand-forest px-4 py-2 text-brand-cream">2D1N · 2 days, 1 night</span>
+          <span class="rounded-full bg-brand-sun px-4 py-2 text-white">3D2N · 3 days, 2 nights</span>
+        </div>
+      </div>
+
+      <div id="ratesGrid" class="mt-12 columns-1 gap-6 md:columns-2 lg:columns-3"></div>
+
+      <div class="reveal mt-6 text-center">
+        <a href="https://www.facebook.com/people/Laagan-Gear-Rental-Davao/61572226591361/" target="_blank" rel="noopener"
+          class="inline-block rounded-full bg-brand-sun px-8 py-3.5 font-display text-base font-semibold uppercase tracking-wide text-white shadow-lg transition hover:bg-brand-sun-deep">
+          Reserve Your Gear
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- ============================ CUSTOMER ADVENTURES (dark) ============================ -->
   <section id="adventures" class="relative overflow-hidden bg-brand-forest py-16 text-brand-cream lg:py-24">
     <!-- decorative mountain range top -->
@@ -850,7 +899,7 @@
               <span class="absolute -right-2 -top-2 grid h-7 w-7 place-items-center rounded-full bg-brand-sun font-display text-sm font-bold text-white shadow">1</span>
             </div>
             <h3 class="mt-6 font-display text-lg font-semibold uppercase tracking-wide text-brand-forest">Browse the Gear</h3>
-            <p class="mx-auto mt-2 max-w-[16rem] font-sans text-sm text-brand-ink/70">Check our catalog and pick what your trip needs.</p>
+            <p class="mx-auto mt-2 max-w-[16rem] font-sans text-sm text-brand-ink/70">Check our catalog and rates, then pick what your trip needs.</p>
           </div>
           <!-- Step 2 -->
           <div class="reveal group relative text-center">
@@ -859,7 +908,7 @@
               <span class="absolute -right-2 -top-2 grid h-7 w-7 place-items-center rounded-full bg-brand-forest font-display text-sm font-bold text-brand-cream shadow">2</span>
             </div>
             <h3 class="mt-6 font-display text-lg font-semibold uppercase tracking-wide text-brand-forest">Message Us</h3>
-            <p class="mx-auto mt-2 max-w-[16rem] font-sans text-sm text-brand-ink/70">Send a message to check rates and reserve your dates.</p>
+            <p class="mx-auto mt-2 max-w-[16rem] font-sans text-sm text-brand-ink/70">Send a message to check availability and reserve your dates.</p>
           </div>
           <!-- Step 3 -->
           <div class="reveal group relative text-center">
@@ -987,6 +1036,93 @@
       document.body.classList.remove('is-loading');
     };
     setTimeout(hidePreloader, 3000);
+
+    // Rental rates: [item, note, 2D1N, 3D2N]. A null 3D2N means a flat price.
+    const rentalRates = [
+      { title: 'Hiking Tents', icon: '&#9978;', items: [
+        ['2P Tent', 'Manual · 10 units', 400, 600],
+        ['3P Tent', 'Manual · 10 units', 450, 650],
+        ['4P Tent', 'Manual · 4 units', 500, 700],
+        ['5P Tent', 'Manual · 4 units', 550, 750],
+        ['6P Tent', 'Manual · 4 units', 600, 800],
+        ['Tent Canopy', '3m x 4m', 400, 600]
+      ] },
+      { title: 'Hiking Bags', icon: '&#127890;', items: [
+        ['12L', '', 350, 550],
+        ['25L', '', 400, 600],
+        ['40L', '', 450, 650],
+        ['45L', '', 500, 750],
+        ['55L', '', 550, 800],
+        ['20L Dry Bag', 'Waterproof', 350, 550]
+      ] },
+      { title: 'Hiking Vests', icon: '&#127939;', items: [
+        ['1L Vest', 'Black', 150, 250],
+        ['2L Vest', 'Grey', 250, 400],
+        ['8L Vest', 'Black', 350, 550]
+      ] },
+      { title: 'Sleep & Rest', icon: '&#128164;', items: [
+        ['Sleeping Bag', '', 250, 400],
+        ['Automatic Inflatable Airbed', 'Good for 1–2', 350, 550],
+        ['Eggnest Foam Mat', '', 250, 400],
+        ['Insulator Mat', '', 150, 250],
+        ['Hammock', '', 200, 300]
+      ] },
+      { title: 'Camp Kitchen', icon: '&#127859;', items: [
+        ['Cookset', 'Good for 2–4', 350, 550],
+        ['Camping Stove', '', 150, 250],
+        ['Butane', 'Per can', 50, null],
+        ['Cooler', '30L', 350, 550]
+      ] },
+      { title: 'Lights & Trail', icon: '&#128294;', items: [
+        ['Camping Light', '1200mAh · 4–6 hrs', 250, 400],
+        ['Headlamp', '1200mAh · 4–6 hrs', 250, 400],
+        ['Headlamp', '2000mAh · 6–8 hrs', 300, 450],
+        ['Trekking Pole', '', 200, 300]
+      ] },
+      { title: 'Tables & Chairs', icon: '&#129681;', items: [
+        ['Camping Table', 'Small', 150, 250],
+        ['Camping Table', 'Long', 250, 400],
+        ['Camping Chair', 'Small', 150, 250],
+        ['Camping Chair', 'Big', 250, 400],
+        ['Long Foldable Table', '', 500, 700],
+        ['Monobloc Chair', '', 150, 250]
+      ] },
+      { title: 'Travel Bags', icon: '&#129523;', items: [
+        ['30L Travel Bag', '', 200, 300],
+        ['Carry-on Luggage', '', 500, 700]
+      ] }
+    ];
+
+    const peso = (n) => `&#8369;${n.toLocaleString()}`;
+    document.getElementById('ratesGrid').innerHTML = rentalRates.map((group) => `
+      <article class="reveal mb-6 break-inside-avoid overflow-hidden rounded-3xl border border-brand-forest/10 bg-white/85 shadow-sm">
+        <header class="flex items-center gap-3 bg-brand-forest px-5 py-4 text-brand-cream">
+          <span class="grid h-9 w-9 place-items-center rounded-full bg-brand-sun text-base" aria-hidden="true">${group.icon}</span>
+          <h3 class="font-display text-lg font-semibold uppercase tracking-wide">${group.title}</h3>
+        </header>
+        <table class="w-full font-sans text-sm">
+          <thead>
+            <tr class="border-b border-brand-forest/10 font-display text-[11px] uppercase tracking-wider text-brand-ink/55">
+              <th class="px-5 py-2.5 text-left font-medium">Item</th>
+              <th class="w-20 py-2.5 text-right font-medium">2D1N</th>
+              <th class="w-20 py-2.5 pl-2 pr-5 text-right font-medium">3D2N</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-brand-forest/5">
+            ${group.items.map(([name, note, short, long]) => `
+              <tr class="transition hover:bg-brand-cream/60">
+                <td class="px-5 py-3">
+                  <span class="font-semibold text-brand-forest">${name}</span>
+                  ${note ? `<span class="block text-xs text-brand-ink/55">${note}</span>` : ''}
+                </td>
+                ${long === null
+                  ? `<td colspan="2" class="py-3 pr-5 text-right font-display text-base font-semibold tabular-nums text-brand-forest">${peso(short)}</td>`
+                  : `<td class="py-3 text-right font-display text-base font-semibold tabular-nums text-brand-forest">${peso(short)}</td>
+                     <td class="py-3 pl-2 pr-5 text-right font-display text-base font-semibold tabular-nums text-brand-sun-deep">${peso(long)}</td>`}
+              </tr>`).join('')}
+          </tbody>
+        </table>
+      </article>`).join('');
 
     // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
